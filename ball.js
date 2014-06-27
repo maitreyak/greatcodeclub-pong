@@ -23,11 +23,18 @@ Ball.prototype.update = function(){
     Entity.prototype.update.call(this)
     var hitter 
     
-    if (this.x > game.width - this.width || this.x<0){
+    if (this.x > game.width - this.width){
         this.xVel *=-1
+        game.bot.score+=1
         this.reset()
-        
     }
+    if (this.x<0){
+        this.xVel*=-1
+        game.player.score+=1
+        this.reset()
+    }
+
+
     if (this.y > game.height - this.height || this.y<0){
         this.yVel *=-1
     }
