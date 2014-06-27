@@ -17,12 +17,25 @@ Ball.prototype.constructor = Ball
 
 Ball.prototype.update = function(){
     Entity.prototype.update.call(this)
+    var hitter 
     
     if (this.x > game.width - this.width || this.x<0){
         this.xVel *=-1
     }
     if (this.y > game.height - this.height || this.y<0){
         this.yVel *=-1
+    }
+    
+    //hitlogic
+    if (this.intersect(game.player)){
+        hitter = game.player
+    }
+    else if(this.intersect(game.bot)){
+        hitter = game.bot
+    }
+    
+    if (hitter){
+        this.xVel *=-1     
     }
 
 }

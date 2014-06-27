@@ -1,6 +1,5 @@
 function Paddle(){
     Entity.call(this)
-    
     this.width = 10
     this.height = 100
    }
@@ -19,6 +18,7 @@ function Player(){
      //init position
     this.x = 10
     this.y = (game.height - this.height)/2
+    this.score = 0     
 }
 
 Player.prototype = Object.create(Paddle.prototype)
@@ -41,6 +41,7 @@ function Bot(){
      //init position
     this.x = game.width - this.width - 10
     this.y = (game.height - this.height)/2
+    this.score = 0     
 }
 
 Bot.prototype = Object.create(Paddle.prototype)
