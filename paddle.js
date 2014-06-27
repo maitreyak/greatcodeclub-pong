@@ -30,7 +30,7 @@ Player.prototype.update = function(){
     if(game.keyPressed.up){
         this.yVel-=speed        
     }else if(game.keyPressed.down){
-        this.yVel+=speed        
+        this.yVel+= speed        
     }else{
         this.yVel =0
     }
@@ -47,15 +47,14 @@ Bot.prototype = Object.create(Paddle.prototype)
 Bot.prototype.constructor = Bot
 
 Bot.prototype.update = function(){
-    var speed = 5
-    if(game.ball.y > this.y+10){
+    var speed = 3
+    if(game.ball.y > this.y+this.height){
         this.yVel = speed
     }
-    else if (game.ball.y < this.y-10){
+    else if (game.ball.y < this.y){
         this.yVel = -speed
-    }else{
-        this.yVel = 0 
     }
+    
     Paddle.prototype.update.call(this)
 }
 

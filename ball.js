@@ -3,8 +3,8 @@ function Ball(){
     this.width = 20 
     this.height = 20
     
-    this.xVel = 1
-    this.yVel = 1
+    this.xVel = 2
+    this.yVel = 3
 
     this.x = game.width / 2 - this.width
     this.y = game.height/ 2 - this.height
